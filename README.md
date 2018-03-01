@@ -1,3 +1,6 @@
+# :warning: Fork. [![Build status](https://travis-ci.org/bvberkum/ESPEasy.svg?branch=mega)](https://travis-ci.org/bvberkum/ESPEasy)
+
+----
 # ESPEasy (development branch)
 
 Build status: [![Build Status](https://travis-ci.org/letscontrolit/ESPEasy.svg?branch=mega)](https://travis-ci.org/letscontrolit/ESPEasy)
