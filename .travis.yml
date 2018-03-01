@@ -32,7 +32,7 @@ script: []
 env: {}
 
 branches:
-  not:
+  except:
     - master
 
 before_deploy:
