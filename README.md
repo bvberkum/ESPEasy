@@ -1,3 +1,8 @@
+# :warning: Fork. [![Build status](https://travis-ci.org/bvberkum/ESPEasy.svg?branch=mega)](https://travis-ci.org/bvberkum/ESPEasy)
+
+----
+
+
 # ESPEasy legacy branch
 
 **MASTER**
