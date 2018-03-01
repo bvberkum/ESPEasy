@@ -31,9 +31,9 @@ script: []
 
 env: {}
 
-#branches:
-#  except:
-#    - master
+branches:
+  except:
+    - master
 
 before_deploy:
   - ./before_deploy
