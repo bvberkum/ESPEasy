@@ -6,9 +6,12 @@
     builds: https://travis-ci.org/bvberkum/ESPEasy
     upstream-builds: https://travis-ci.org/letscontrolit/ESPEasy
   repositories:
-    espeasy: https://github.com/letscontrolit/ESPEasy.git
+    upstream: https://github.com/letscontrolit/ESPEasy.git
     origin: git@github.com:bvberkum/ESPEasy.git
   scripts:
     init:
       - htd package update
       - vc regenerate
+      - vc update-local upstream
+    update:
+      - vc update-local upstream
