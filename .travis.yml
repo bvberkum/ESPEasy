@@ -1,0 +1,53 @@
+language: python
+python:
+  - '2.7'
+
+#we want a newer cppcheck, so use trusty
+dist: trusty
+
+sudo: false
+
+cache:
+  directories:
+  - "~/.platformio"
+  - "./.pioenvs"
+
+
+
+addons:
+  apt:
+    packages:
+    - cppcheck
+
+
+
+install:
+  - pip install -U platformio
+
+script:
+  # - cppcheck --enable=warning src/*.ino -q --force -I src --include=src/ESPEasy.ino --error-exitcode=1
+  # - ./memanalyzer.py ~/.platformio/packages/toolchain-xtensa/bin/xtensa-lx106-elf-objdump
+  - PLATFORMIO_BUILD_FLAGS="-D CONTINUOUS_INTEGRATION" platformio run -s
+
+  # patch platformio core libs for PUYA bug (https://github.com/letscontrolit/ESPEasy/issues/650)
+  - cd patches; ./check_puya_patch; cd ..
+  - PLATFORMIO_BUILD_FLAGS="-D CONTINUOUS_INTEGRATION" platformio run -s --environment dev_ESP8266PUYA_1024
+
+
+before_deploy:
+  - ./before_deploy
+  - export RELEASE_FILE=$(ls ESPEasy*.zip)
+
+deploy:
+  provider: releases
+  api_key:
+    secure: 04AMWXSbiy7YVW36dyC96c3oiSofiYq9CwOLGrrw1RoPes3AbmlQnE1E7VKPKfU2A3jvhEJbRp1ft8t4m6mxU6EPIMkye2Ld/9h8Hc5QIkGlOwpyS04Yie4BlELLsNkmCK6LtCFUj++6n/ynGJidFTrf5rH0/43DasgLD5zcwc81lFplh95z5svgBVEQyUcWmUe/BPxBesGpeTizR/DTAwCLIATAippiu1wTpICEnp5LhBAUQ0AG7I1+Xqczbo2/+FNS5c+eSnj0rgaDrsjnqeUI7qh1jtaKHjGJTKmSnDVuCXgu13Y7OR3NZyodyoEtnS8RF1mh6zG8JekDeOTixuPDgneZQBGEBXY9rQC1WNZamz/ywxiVwwwPefLkip463tfNLDKDGdFux2jF/0H210UPOeovCx8SwBnOyQTKOf+d8SDir+NpbIan8GRDq/xLWFAjRowJhkQBuCFYK7kM3cnrgZUCZaaJNJFkfYtj00b8cM9EwHqgkDUjErn40sMs3CeAHO9oF/3CJHIMjOzpP+atMDCWlAYqNhOTcJJd0W8LWaYzailOIbUU3q87zCzKXjK49qHVXOfH3WT85OFPJuGMWBbVYa0AyN6LAkEnv+hLB6CoU5KnfcNiBVjwSW4/RUCVUUp14DYvMDXkIiLrxr+YbuDiZS9rPejqjAy2Rsg=
+  file_glob: true
+  file: "${RELEASE_FILE}"
+  skip_cleanup: true
+  on:
+    tags: true
+    #repo: bvberkum/ESPEasy
+
+notifications:
+  email: false
