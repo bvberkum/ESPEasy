@@ -1,4 +1,7 @@
-# :warning: Fork. [![Build status](https://travis-ci.org/bvberkum/ESPEasy.svg?branch=mega)](https://travis-ci.org/bvberkum/ESPEasy)
+# :warning: Fork.
+###### dev: ![dev/mega](https://img.shields.io/github/last-commit/bvberkum/ESPEasy/mega.svg) [![Build status](http://img.shields.io/travis/bvberkum/ESPEasy/mega.svg)](https://travis-ci.org/bvberkum/ESPEasy) ![repo license](https://img.shields.io/github/license/bvberkum/ESPEasy.svg) ![commits per year](https://img.shields.io/github/commit-activity/y/bvberkum/ESPEasy.svg) ![](https://img.shields.io/github/languages/code-size/bvberkum/ESPEasy.svg) ![](https://img.shields.io/github/repo-size/bvberkum/ESPEasy.svg)
+###### release: ![release/v2.0](https://img.shields.io/github/last-commit/bvberkum/ESPEasy/v2.0.svg)
+###### master: ![master](https://img.shields.io/github/last-commit/bvberkum/ESPEasy/master.svg)
 
 ----
 # ESPEasy (development branch)
