@@ -34,7 +34,7 @@ script:
   - PLATFORMIO_BUILD_FLAGS="-D CONTINUOUS_INTEGRATION" platformio run -s --environment dev_ESP8266PUYA_1024
 
 branches:
-  not:
+  except:
     - master
 
 before_deploy:
