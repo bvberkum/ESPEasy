@@ -40,16 +40,14 @@ before_deploy:
 
 deploy:
   provider: releases
-  prerelease: true
   api_key:
-    secure: bZeuKI7evXeZYmGayfcvIC1fThBGcksAyOrCbZ8kAGeTbHGJqFLBBy8to5UpNBSZVfeDWo25Iqy8Pfbyb7p2c1hg6fG9jS0UzQkLnoUNMxpUM1dJACkZxvFdP4Br3Y3vUPWtrWUbo8rN/b3E6tjSNLE7vQiwsarj+eWTO2V6BGcsN0eHc04/UCM2+DcHvJ4y7Ec36yIUaClNAWMal1osBYaViruylOdBKT/WDs1ZMoJMceXCfxMQ/8J2moYvymKfSkXSmoMGmzlTuq8v5N4AweutjpC4Zba2BbxIJv+PwWjhfIgTviHFggSU90UPTKVWYv13vms92VVKz1CDVrUQNn+YQes9+ROPUnrMc9bJ+q7E1lWJRZeDMqGECB+8BjUtUk6H81K+XhOnW1mtZiMnvMCwkmE0OT1eBObGMcpR962/DUBoQDmulMs2IieB0dLobmUBhpc1syrKEPKxjY7yhhQMr6In82jODVLR3qDkNQ8xtIfevzCo/ocUjiOrXW4b/pDMy28Yh109DMb/KSWEsjjkkpXhsT1YVy2MwOa7FRhHFW+SNKX4Us8T75H+pO4mQ4afnPEtjYKodj7XD92zqNxKfMx3elEx5RK6HKekHjpXdYtuXzGONB9StA+2T43/2llt3n5fzv4BRfCumBEJ77/ufB0U/uhsCe6lVwJf34U=
+    secure: 04AMWXSbiy7YVW36dyC96c3oiSofiYq9CwOLGrrw1RoPes3AbmlQnE1E7VKPKfU2A3jvhEJbRp1ft8t4m6mxU6EPIMkye2Ld/9h8Hc5QIkGlOwpyS04Yie4BlELLsNkmCK6LtCFUj++6n/ynGJidFTrf5rH0/43DasgLD5zcwc81lFplh95z5svgBVEQyUcWmUe/BPxBesGpeTizR/DTAwCLIATAippiu1wTpICEnp5LhBAUQ0AG7I1+Xqczbo2/+FNS5c+eSnj0rgaDrsjnqeUI7qh1jtaKHjGJTKmSnDVuCXgu13Y7OR3NZyodyoEtnS8RF1mh6zG8JekDeOTixuPDgneZQBGEBXY9rQC1WNZamz/ywxiVwwwPefLkip463tfNLDKDGdFux2jF/0H210UPOeovCx8SwBnOyQTKOf+d8SDir+NpbIan8GRDq/xLWFAjRowJhkQBuCFYK7kM3cnrgZUCZaaJNJFkfYtj00b8cM9EwHqgkDUjErn40sMs3CeAHO9oF/3CJHIMjOzpP+atMDCWlAYqNhOTcJJd0W8LWaYzailOIbUU3q87zCzKXjK49qHVXOfH3WT85OFPJuGMWBbVYa0AyN6LAkEnv+hLB6CoU5KnfcNiBVjwSW4/RUCVUUp14DYvMDXkIiLrxr+YbuDiZS9rPejqjAy2Rsg=
   file_glob: true
   file: "${RELEASE_FILE}"
-
   skip_cleanup: true
   on:
-      tags: true
-    # repo: psy0rz/ESPEasy-platformio
+    tags: true
+    #repo: bvberkum/ESPEasy
 
 notifications:
   email: false

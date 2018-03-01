@@ -1,0 +1,14 @@
+- type: application/vnd.org.wtwta.project
+  main: ESPEasy
+  id: ESPEasy
+  license: GPL-3.0
+  urls:
+    builds: https://travis-ci.org/bvberkum/ESPEasy
+    upstream-builds: https://travis-ci.org/letscontrolit/ESPEasy
+  repositories:
+    espeasy: https://github.com/letscontrolit/ESPEasy.git
+    origin: git@github.com:bvberkum/ESPEasy.git
+  scripts:
+    init:
+      - htd package update
+      - vc regenerate
