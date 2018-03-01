@@ -33,6 +33,9 @@ script:
   - cd patches; ./check_puya_patch; cd ..
   - PLATFORMIO_BUILD_FLAGS="-D CONTINUOUS_INTEGRATION" platformio run -s --environment dev_ESP8266PUYA_1024
 
+branches:
+  not:
+    - master
 
 before_deploy:
   - ./before_deploy
