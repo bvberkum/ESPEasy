@@ -13,3 +13,5 @@
       - htd package update
       - vc regenerate
       - vc update-local upstream
+    update:
+      - vc update-local upstream
