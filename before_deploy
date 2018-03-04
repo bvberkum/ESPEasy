@@ -7,6 +7,7 @@ VERSION=$(git describe)
 
 
 for ENV in \
+  mini_512 \
   normal_ESP8266_1024 \
   normal_ESP8266_4096 \
   normal_ESP8285_1024 \
